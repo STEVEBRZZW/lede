@@ -31,7 +31,7 @@
 		cooling-levels = <0 0x55 0x66 0x77 0x88 0x99 0xbb 0xcc 0xff>;
 		#cooling-cells = <2>;
 		fan-supply = <&vcc5v0_sys>;
-		pwms = <&pwm0 0 50000 0>;
+		pwms = <&pwm0 0 5000 0>;
 	};
 };
 
