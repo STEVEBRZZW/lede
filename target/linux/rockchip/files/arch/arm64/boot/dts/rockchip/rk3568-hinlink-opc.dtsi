@@ -142,12 +142,6 @@
 		};
 	};
 
-	pwm-fan {
-		compatible = "pwm-fan";
-		cooling-levels = <0 100 150 200 255>;
-		#cooling-cells = <2>;
-		pwms = <&pwm0 0 50000 0>;
-	};
 };
 
 &combphy0 {
@@ -525,8 +519,26 @@
 };
 
 &pwm0 {
-	pinctrl-names = "active";
 	status = "okay";
+};
+
+&pwm4 {
+	status = "disabled";
+};
+
+&pwm5 {
+	status = "disabled";
+};
+
+&pwm7 {
+	status = "disabled";
+
+	compatible = "rockchip,remotectl-pwm";
+	remote_pwm_id = <3>;
+	handle_cpu_id = <1>;
+	remote_support_psci = <0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pwm7_pins>;
 };
 
 &rng {
